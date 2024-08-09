@@ -101,3 +101,27 @@ button {
 .hide {
     display: none;
 }
+
+@media (min-width: 768px) {
+    body {
+        border: 1px solid red;
+        margin: 2.5rem;
+    }
+    .buttons {
+        border: 1px solid red;
+        flex-direction: row !important; 
+        justify-content: center;
+        gap: 1.5rem;
+
+        & button {
+            min-width: 332px;
+            flex: 1;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    body {
+        border: 1px solid blue;
+    }
+}
