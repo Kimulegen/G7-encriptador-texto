@@ -51,13 +51,15 @@ main {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
-
-        & button {
-            border: 1px solid var(--primary-color);
-            border-radius: 1.5rem;
-            height: 67px;
-        }
     }
+}
+
+button {
+    border: 1px solid var(--primary-color);
+    border-radius: 1.5rem;
+    height: 67px;
+    cursor: pointer;
+    color: var(--primary-color);
 }
 
 #encrypt {
@@ -65,27 +67,37 @@ main {
     background-color: var(--primary-color);
 }
 
-#decrypt {
-    color: var(--primary-color);
-}
-
 .output {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
     background-color: #FFF;
     border-radius: 2rem;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 8%);
     text-align: center;
 
-    & h2 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--text);
+    .output-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        & h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+    
+        & span {
+            color: var(--muted-text)
+        }
+    
+        & p {
+            font-size: 1.5rem;
+        }
     }
+}
 
-    & span {
-        color: var(--muted-text)
-    }
+.hide {
+    display: none;
 }
