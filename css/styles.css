@@ -1,7 +1,57 @@
-* {
-    box-sizing: border-box;
+body {
+    margin: 0 1rem;
+    background-color: #F3F5FC;
 }
 
-body {
-    background-color: #FFFFFE;
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.header {
+    border: 1px solid red;
+    height: 6rem;
+    padding: 1.5rem 0;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.input-text {
+    border: 1px solid red;
+    min-height: 12rem;
+    font-size: 2rem;
+}
+.input-buttons {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & span {
+        font-size: 0.75rem;
+    }
+    & .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.output {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+
+    & h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
 }
