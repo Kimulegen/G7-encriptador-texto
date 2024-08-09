@@ -9,7 +9,7 @@ const copyButton = $('#copy')
 // Functions
 const transformText = (type, text) => {
     let transformedText = text
-    const encryptkey = {
+    const substitutionDict = {
         e: 'enter',
         i: 'imes',
         a: 'ai',
@@ -18,13 +18,13 @@ const transformText = (type, text) => {
     }
 
     if (type == 'encrypt') {
-        for (const k in encryptkey) {
+        for (const k in substitutionDict) {
             const regex = new RegExp(k, 'g')
-            transformedText = transformedText.replace(regex, encryptkey[k])
+            transformedText = transformedText.replace(regex, substitutionDict[k])
         }
     } else if (type == 'decrypt'){
-        for (const k in encryptkey) {
-            const regex = new RegExp(encryptkey[k], 'g')
+        for (const k in substitutionDict) {
+            const regex = new RegExp(substitutionDict[k], 'g')
             transformedText = transformedText.replace(regex, k)
         }
     }
@@ -43,7 +43,6 @@ async function writeClipboardText(text) {
 // Event listeners
 input.addEventListener('click', (e) => {
     e.target.textContent = ''
-    console.log('erased')
 }, {once :true})
 
 const addButtonListener = (button, callback) => {
@@ -60,11 +59,10 @@ const addButtonListener = (button, callback) => {
     })
 }
 
-addButtonListener(encryptButton, (text) => transformText('encrypt', text))
-addButtonListener(decryptButton, (text) => transformText('decrypt', text))
-
 copyButton.addEventListener('click', () => {
     writeClipboardText(output.textContent.trim())
     copyButton.textContent = 'Copiado!'
-
 })
+
+addButtonListener(encryptButton, (text) => transformText('encrypt', text))
+addButtonListener(decryptButton, (text) => transformText('decrypt', text))
