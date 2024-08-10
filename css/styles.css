@@ -11,9 +11,11 @@
 }
 body {
     min-height: 933px;
-    margin: 1.5rem 1rem 2.5rem 1rem;
+    padding: 1.5rem 1rem 2.5rem 1rem;
+    margin: 0;
     background-color: var(--secondary-color);
     display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -22,6 +24,7 @@ main {
     gap: 4rem;
     min-height: 100%;
     width: 100%;
+    flex: 1;
 }
 
 .header {
@@ -119,7 +122,7 @@ button {
 @media (min-width: 768px) {
     body {
         min-height: 1174px;
-        margin: 2.5rem;
+        padding: 2.5rem;
     }
 
     .header {
@@ -138,6 +141,31 @@ button {
 
 @media (min-width: 1200px){
     body {
+        min-height: 100vh !important;
         border: 1px solid blue;
+    }
+
+    main {
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    .header{
+        width: 120px;
+        padding-top: 0;
+
+        & img {
+            margin: auto;
+        }
+    }
+
+    .input {
+        padding-top: 8rem;
+        padding-bottom: 2rem;
+    }
+
+    .output {
+        margin-top: 0;
+        width: 400px;
     }
 }
