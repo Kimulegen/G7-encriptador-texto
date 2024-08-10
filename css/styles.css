@@ -21,6 +21,7 @@ main {
     flex-direction: column;
     gap: 4rem;
     min-height: 100%;
+    width: 100%;
 }
 
 .header {
@@ -117,8 +118,21 @@ button {
 
 @media (min-width: 768px) {
     body {
-        border: 1px solid red;
+        min-height: 1174px;
         margin: 2.5rem;
+    }
+
+    .header {
+        padding-top: 2.25rem;
+        margin-bottom: 3.25rem;
+    }
+
+    .buttons {
+        flex-direction: row !important;
+        
+        & button {
+            flex: 1;
+        }
     }
 }
 
