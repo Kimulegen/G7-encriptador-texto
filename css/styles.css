@@ -115,6 +115,10 @@ button {
     }
 }
 
+.placeholder {
+    display: none;
+}
+
 #copy {
     margin-top: auto;
 }
@@ -171,5 +175,10 @@ button {
     .output {
         margin-top: 0;
         width: 400px;
+        justify-content: center !important;
+    }
+
+    .placeholder {
+        display: block;
     }
 }
