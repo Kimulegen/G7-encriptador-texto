@@ -176,6 +176,12 @@ button {
         margin-top: 0;
         width: 400px;
         justify-content: center !important;
+
+        & p {
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
     }
 
     .placeholder {
